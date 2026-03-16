@@ -1,7 +1,7 @@
 package by.kozhevnikov.task4.web.servlet;
 
 import by.kozhevnikov.task4.web.model.Pizza;
-import by.kozhevnikov.task4.web.service.PizzaService;
+import by.kozhevnikov.task4.web.service.impl.PizzaServiceImpl;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -13,7 +13,7 @@ import java.util.List;
 
 @WebServlet({"/", "/pizzas/*"})
 public class PizzaServlet extends HttpServlet {
-  private final PizzaService pizzaService = new PizzaService();
+  private final PizzaServiceImpl pizzaService = new PizzaServiceImpl();
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

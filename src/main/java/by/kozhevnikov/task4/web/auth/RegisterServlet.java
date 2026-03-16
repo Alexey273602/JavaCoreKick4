@@ -1,7 +1,7 @@
 package by.kozhevnikov.task4.web.auth;
 
 import by.kozhevnikov.task4.web.model.User;
-import by.kozhevnikov.task4.web.service.UserService;
+import by.kozhevnikov.task4.web.service.impl.UserServiceImpl;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @WebServlet ("/register")
 public class RegisterServlet extends HttpServlet {
-  private final UserService userService = new UserService();
+  private final UserServiceImpl userService = new UserServiceImpl();
 
   protected void doPost(HttpServletRequest req, HttpServletResponse resp)
           throws IOException {
