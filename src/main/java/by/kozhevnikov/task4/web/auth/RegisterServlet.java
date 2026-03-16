@@ -11,7 +11,7 @@ import java.io.IOException;
 
 @WebServlet ("/register")
 public class RegisterServlet extends HttpServlet {
-  private UserService userService = new UserService();
+  private final UserService userService = new UserService();
 
   protected void doPost(HttpServletRequest req, HttpServletResponse resp)
           throws IOException {

@@ -8,7 +8,7 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-  private UserService userService = new UserService();
+  private final UserService userService = new UserService();
 
   protected void doPost(HttpServletRequest req, HttpServletResponse resp)
           throws ServletException, IOException {

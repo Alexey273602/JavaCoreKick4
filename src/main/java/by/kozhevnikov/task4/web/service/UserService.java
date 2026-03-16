@@ -6,7 +6,7 @@ import by.kozhevnikov.task4.web.model.User;
 import by.kozhevnikov.task4.web.utils.PasswordUtil;
 
 public class UserService {
-  private UserDAO userDAO = new UserDAO();
+  private final UserDAO userDAO = new UserDAO();
 
   public boolean register(User user) {
     try {
@@ -42,5 +42,7 @@ public class UserService {
     } catch (Exception e) {
       return null;
     }
+
   }
+
 }
