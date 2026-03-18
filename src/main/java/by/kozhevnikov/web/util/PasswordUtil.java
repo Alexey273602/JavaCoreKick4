@@ -1,4 +1,4 @@
-package by.kozhevnikov.task4.web.utils;
+package by.kozhevnikov.web.util;
 
 
 import java.security.SecureRandom;

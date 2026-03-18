@@ -1,4 +1,4 @@
-package by.kozhevnikov.task4.web.model;
+package by.kozhevnikov.web.model;
 
 public class User {
   private int id;

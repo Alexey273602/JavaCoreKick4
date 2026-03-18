@@ -1,12 +1,18 @@
-package by.kozhevnikov.task4.web.service.impl;
+package by.kozhevnikov.web.service.impl;
 
 
-import by.kozhevnikov.task4.web.dao.UserDAO;
-import by.kozhevnikov.task4.web.model.User;
-import by.kozhevnikov.task4.web.utils.PasswordUtil;
+import by.kozhevnikov.web.dao.impl.UserDaoImpl;
+import by.kozhevnikov.web.model.User;
+import by.kozhevnikov.web.service.UserService;
+import by.kozhevnikov.web.util.PasswordUtil;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public class UserServiceImpl {
-  private final UserDAO userDAO = new UserDAO();
+public class UserServiceImpl implements UserService {
+
+  static final Logger logger = LogManager.getLogger(UserServiceImpl.class);
+
+  private final UserDaoImpl userDAO = new UserDaoImpl();
 
   public boolean register(User user) {
     try {
@@ -17,9 +23,10 @@ public class UserServiceImpl {
       user.setPasswordHash(hashedPassword);
       user.setSalt(salt);
 
-      return userDAO.create(user);
+      return
+              userDAO.create(user);
     } catch (Exception e) {
-      e.printStackTrace();
+      logger.error(e);
       return false;
     }
   }
@@ -31,12 +38,12 @@ public class UserServiceImpl {
         return PasswordUtil.verifyPassword(password, user.getPasswordHash(), user.getSalt());
       }
     } catch (Exception e) {
-      e.printStackTrace();
+      logger.error(e);
     }
     return false;
   }
 
-  public User getUserByUsername(String username) {
+  public User findByUsername(String username) {
     try {
       return userDAO.findByUsername(username);
     } catch (Exception e) {

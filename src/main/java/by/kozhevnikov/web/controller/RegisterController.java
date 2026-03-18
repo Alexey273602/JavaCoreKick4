@@ -1,7 +1,7 @@
-package by.kozhevnikov.task4.web.auth;
+package by.kozhevnikov.web.controller;
 
-import by.kozhevnikov.task4.web.model.User;
-import by.kozhevnikov.task4.web.service.impl.UserServiceImpl;
+import by.kozhevnikov.web.model.User;
+import by.kozhevnikov.web.service.impl.UserServiceImpl;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet ("/register")
-public class RegisterServlet extends HttpServlet {
+public class RegisterController extends HttpServlet {
   private final UserServiceImpl userService = new UserServiceImpl();
 
   protected void doPost(HttpServletRequest req, HttpServletResponse resp)
