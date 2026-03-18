@@ -21,7 +21,6 @@
 <body>
 <h1>🍕 Управление пиццами</h1>
 
-<!-- ФОРМА СОЗДАНИЯ -->
 <form action="${pageContext.request.contextPath}/pizzas" method="post" class="form_class">
     <h3>➕ Добавить новую пиццу</h3>
     <input type="hidden" name="action" value="create">
@@ -31,7 +30,6 @@
     <button type="submit">Добавить пиццу</button>
 </form>
 
-<!-- ТАБЛИЦА ПИЦЦ -->
 <table class="pizzas-table">
     <thead>
     <tr>
@@ -74,7 +72,6 @@
     </tbody>
 </table>
 
-<!-- ФОРМА РЕДАКТИРОВАНИЯ -->
 <c:if test="${not empty editPizza}">
     <div class="form_class" style="background: #fff3cd;">
         <h3>✏️ Редактирование пиццы: ${editPizza.name}</h3>
